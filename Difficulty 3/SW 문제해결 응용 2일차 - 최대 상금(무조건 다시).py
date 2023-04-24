@@ -1,48 +1,8 @@
-# for tc in range(1,int(input())+1):
-#     data, K = input().split() # 숫자판의 정보, 교환횟수
-#     K = int(K)
-#     N = len(data)
-#     now = set([data])
-#     nxt = set()
-#     for _ in range(K):
-#         while now:
-#             s = now.pop()
-#             s = list(s)
-#             for i in range(N):
-#                 for j in range(i+1,N):
-#                     s[i],s[j] = s[j],s[i]
-#                     nxt.add(''.join(s))
-#                     s[i], s[j] = s[j], s[i]
-#         now,nxt = nxt,now
-#
-#     print('#{} {}'.format(tc,max(map(int,now))))
-
-
-# def dfs_recursive(graph, start, change, visited=[]):
-#     ## 데이터를 추가하는 명령어 / 재귀가 이루어짐
-#     visited.append(start)
-#
-#     for node in graph[start]:
-#         if node not in visited:
-#             dfs_recursive(graph, node, visited)
-#     return visited
-#
-# N = int(input())
-#
-# for test_case in range(1, N+1):
-#     box, change = input().split()
-#     box=list(map(int, box))
-#     change=int(change)
-#
-#     result = dfs_recursive(box, 0, change)
-#
-#
-#     print(f"#{test_case} {result}")
-
-
 # D3 1244 최대상금
 
 # 경우의 수 찾기, 매개변수로 몇번 바꿧는지 적는다.
+
+
 def dfs(count):
     global answer
     # 횟수를 다 사용했다면
@@ -71,7 +31,7 @@ def dfs(count):
             values[i], values[j] = values[j], values[i]
 
 
-for t in range(int(input())):
+for test_case in range(1, int(input())+1):
     answer = -1
     value, change = input().split()
     # 바꾸기 편하려고 리스트화시킴
@@ -82,4 +42,4 @@ for t in range(int(input())):
     # 가지치기용 딕셔너리
     visited = {}
     dfs(change)
-    print('#{} {}'.format(t + 1, answer))
+    print(f'#{test_case} {answer}')
