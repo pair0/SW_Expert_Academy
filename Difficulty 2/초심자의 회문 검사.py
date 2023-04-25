@@ -1,4 +1,4 @@
-# 1 (이게 더 빠름ㅋ)
+# 1 (이게 더 빠름)
 T = int(input())
 
 for test_case in range(1, T+1):
