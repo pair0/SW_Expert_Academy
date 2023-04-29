@@ -14,9 +14,9 @@ for test_case in range(1, T+1):
 
     # B사의 수도 요금
     if R >= W:
-        B = R
+        B = Q
     else:
-        B = R + (S * (W - R))
+        B = Q + (S * (W - R))
 
     if A <= B:
         answer = A
